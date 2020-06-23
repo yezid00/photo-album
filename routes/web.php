@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('galleries','GalleryController');
-Route::get('/download/{file}', 'DownloadController@download');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
