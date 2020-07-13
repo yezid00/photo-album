@@ -22,6 +22,7 @@
 <body>
       @include('partials.nav')  
         <main class="py-4">
+            @include('partials.message')
             @yield('content')
         </main>
     </div>
