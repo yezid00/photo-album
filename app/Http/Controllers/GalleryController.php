@@ -62,7 +62,7 @@ class GalleryController extends Controller
         $image->image = $imageToStore;
         $image->user_id = auth()->user()->id;
         $image->save();
-        return redirect()->route('galleries.index');
+        return redirect()->route('home')->withSuccess('New picture uploaded');
     }
 
     /**
@@ -111,6 +111,6 @@ class GalleryController extends Controller
         $image->delete();
         Storage::delete('public/gallery/',$image->image);
 
-        return Redirect::back();
+        return Redirect::back()->withSuccess('Picture deleted');
     }
 }
